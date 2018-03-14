@@ -251,9 +251,10 @@ pre {
                   The source code for this application is available to be forked from the <a href="https://www.github.com/openshift/ruby-ex">OpenShift GitHub repository</a>.
                   You can configure a webhook in your repository to make OpenShift automatically start a build whenever you push your code:
                 </p>
+                <p>HOST: <%= Socket.gethostname %> </P>
 
 <ol>
-  <li>From the the Web Web Console homepage, navigate to your project</li>
+  <li>From the Web Console homepage, navigate to your project</li>
   <li>Click on Browse &gt; Builds</li>
   <li>From the view for your Build click on the button to copy your GitHub webhook</li>
   <li>Navigate to your repository on GitHub and click on repository settings &gt; webhooks</li>
