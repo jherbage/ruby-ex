@@ -1,4 +1,5 @@
 require 'rack/lobster'
+require 'socket'
 
 map '/health' do
   health = proc do |env|
@@ -6,6 +7,14 @@ map '/health' do
   end
   run health
 end
+
+map '/host' do
+  host = proc do |env|
+    [200, { "Content-Type" => "text/html" }, [Socket.gethostname]]
+  end
+  run host
+end
+
 
 map '/lobster' do
   run Rack::Lobster.new
